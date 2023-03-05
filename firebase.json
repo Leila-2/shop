@@ -1,0 +1,14 @@
+{
+  "database": {
+    "rules": "database.rules.json"
+  },
+  "hosting": {
+    "redirects": [
+      {
+        "source": "/signup",
+        "destination": "/profile",
+        "type": 301
+      }
+    ]
+  }
+}
