@@ -2,13 +2,15 @@ import { useDispatch } from 'react-redux';
 import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
 import { setUser } from '../store/slices/userSlice';
 import { useNavigate } from 'react-router-dom';
+
 import Form from './Form';
 
 export default function Signup() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const auth = getAuth();
+
   const handleSignup = (email, password) => {
-    const auth = getAuth();
     createUserWithEmailAndPassword(auth, email, password)
       .then(({ user }) => {
         console.log(user);
@@ -23,6 +25,7 @@ export default function Signup() {
       })
       .catch(console.error);
   };
+
   return (
     <div>
       <Form title="Sign up" handleClick={handleSignup} />

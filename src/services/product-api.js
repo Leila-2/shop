@@ -21,3 +21,12 @@ export async function getById(id) {
     console.log(error);
   }
 }
+
+export async function getByCategory(category) {
+  try {
+    const { data } = await axios.get(`/${category}`);
+    return data;
+  } catch (error) {
+    console.log(error);
+  }
+}

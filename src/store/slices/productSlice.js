@@ -9,9 +9,16 @@ const productSlice = createSlice({
   reducers: {
     setProduct(state, { payload }) {
       if (state.product === null) {
+        payload.quantity = 1;
         state.product = [payload];
       } else {
-        state.product = [...state.product, payload];
+        const itemInCart = state.product.find((item) => item.id === payload.id);
+        if (itemInCart) {
+          itemInCart.quantity++;
+        } else {
+          payload.quantity = 1;
+          state.product = [...state.product, payload];
+        }
       }
     },
     removeProduct(state) {

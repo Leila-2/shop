@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-import { Navigate, Link } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 import { useAuth } from '../hooks/useAuth';
 import { removeUser } from '../store/slices/userSlice';
 import { removeProduct } from '../store/slices/productSlice';
@@ -28,9 +28,6 @@ export default function Profile() {
 
       <h1>Hello, dear costomer!</h1>
       <h2>Your purchases</h2>
-      <p>No purchases!</p>
-      <p> Find products from our collection!</p>
-      <Link to="/products">See our products</Link>
       <Cart />
     </div>
   );

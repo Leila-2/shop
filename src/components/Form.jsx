@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-export default function Form({ title, handleClick }) {
+export default function Form({ title, handleClick, handleGoogleAuth }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
